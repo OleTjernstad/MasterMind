@@ -1,7 +1,8 @@
 import React from 'react'
+import '../App.css';
 
 function Peg(props){
-   return <div>Hello {props.name}</div>
+   return <div className="box pinhole"></div>
 }
 
 export default Peg
