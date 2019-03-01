@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ScorePeg(props){
-   return <div>Hello {props.name}</div>
+   return <div className="checkPins"></div>
 }
 
 export default ScorePeg
