@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import Game from './Pages/Game'
 
 class App extends Component {
 	render() {
-		return (<div ></div>);
+		return (<Game/>);
 	}
 }
 
