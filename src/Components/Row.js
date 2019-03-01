@@ -12,7 +12,12 @@ function Row(props) {
 			<Peg/>
 		</div>
 		<div className="check">
-			<div className="checkBox"></div>
+			<div className="checkBox">
+				<ScorePeg/>
+				<ScorePeg/>
+				<ScorePeg/>
+				<ScorePeg/>
+			</div>
 		</div>
 	</div>
 }
