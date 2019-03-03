@@ -6,10 +6,10 @@ import '../App.css';
 function Row(props) {
 	return <div className="row frame">
 		<div className="pinHoleRow">
-			<Peg/>
-			<Peg/>
-			<Peg/>
-			<Peg/>
+			<Peg onClickPeg={props.onClickPeg}/>
+			<Peg onClickPeg={props.onClickPeg}/>
+			<Peg onClickPeg={props.onClickPeg}/>
+			<Peg onClickPeg={props.onClickPeg}/>
 		</div>
 		<div className="check">
 			<div className="checkBox">
