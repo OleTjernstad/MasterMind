@@ -21,12 +21,12 @@ function ColorPicker(props){
 
   }
    return <div style={styles} className="colorSelect frame">
-     {colorBlock(0)}
      {colorBlock(1)}
      {colorBlock(2)}
      {colorBlock(3)}
      {colorBlock(4)}
      {colorBlock(5)}
+     {colorBlock(6)}
 
 
    </div>
