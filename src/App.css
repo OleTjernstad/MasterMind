@@ -82,27 +82,3 @@
   height: 40px;
   cursor: pointer;
 }
-
-.colorRed {
-  background-color: red;
-}
-
-.colorCyan {
-  background-color: cyan;
-}
-
-.colorGreen {
-  background-color: green;
-}
-
-.colorOrange {
-  background-color: orange;
-}
-
-.colorMagenta {
-  background-color: magenta;
-}
-
-.colorBlue {
-  background-color: blue;
-}
