@@ -37,7 +37,7 @@ class Board extends React.Component {
 
 		const Rows = rownums.map(num => <Row onClickPeg={this.onClickPeg} key={num}/>)
 		return <div>
-			<ColorPicker/>
+			<ColorPicker showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 		</div>
 	}
