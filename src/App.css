@@ -65,6 +65,7 @@
 
 .colorSelect {
   position: absolute;
+  display: none;
   z-index: 1;
   display: none;
   height: 100px;
