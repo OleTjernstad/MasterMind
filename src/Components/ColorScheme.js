@@ -1,4 +1,4 @@
-export const colorScheme = {
+const ColorScheme = {
   0: 'red',
   1: 'cyan',
   2: 'green',
@@ -8,3 +8,5 @@ export const colorScheme = {
   'correct': 'black',
   'correctColor': 'red'
 }
+
+export default ColorScheme

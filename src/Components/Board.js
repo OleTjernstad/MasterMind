@@ -1,7 +1,7 @@
 import React from 'react'
 import Row from './Row'
 import ColorPicker from './ColorPicker'
-import ColorSheme from './ColorSheme'
+import ColorScheme from './ColorScheme'
 import '../App.css';
 
 class Board extends React.Component {
