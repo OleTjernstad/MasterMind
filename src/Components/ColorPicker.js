@@ -6,7 +6,7 @@ function ColorPicker(props){
   const colorBlock = colIndex => {
     return (<div className="color"
         onClick={() => console.log(colIndex)}
-        style={{backgroundColor: ColorScheme[colIndex]}}>
+        style={{backgroundColor: props.ColorScheme[colIndex]}}>
     </div>)
   }
 
@@ -20,12 +20,13 @@ function ColorPicker(props){
 
   }
    return <div style={styles} className="colorSelect frame">
+     {colorBlock(0)}
      {colorBlock(1)}
      {colorBlock(2)}
      {colorBlock(3)}
      {colorBlock(4)}
      {colorBlock(5)}
-     {colorBlock(6)}
+
 
    </div>
 }
