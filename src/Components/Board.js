@@ -3,27 +3,44 @@ import Row from './Row'
 import ColorPicker from './ColorPicker'
 import '../App.css';
 
-function Board(props) {
-	const rownums = [
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12
-	]
+class Board extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			showColorPicker: false,
+			colorPickerPlace: {}
+		}
+	}
 
-	const Rows = rownums.map(num => <Row key={num}/>)
-	return <div>
-		<ColorPicker/>
-		<div className="board">{Rows}</div>
-	</div>
+	onClickPeg = (event) => {
+		const peg = event.target
+		const position = peg.getBoundingClientRect()
+		this.setState({colorPickerPlace: position})
+		this.setState({showColorPicker: true})
+	}
+
+	render() {
+		const rownums = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12
+		]
+
+		const Rows = rownums.map(num => <Row onClickPeg={this.onClickPeg} key={num}/>)
+		return <div>
+			<ColorPicker/>
+			<div className="board">{Rows}</div>
+		</div>
+	}
 }
 
 export default Board
