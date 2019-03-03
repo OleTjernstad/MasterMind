@@ -1,7 +1,6 @@
 import React from 'react'
 import Row from './Row'
 import ColorPicker from './ColorPicker'
-import ColorScheme from './ColorScheme'
 import '../App.css';
 
 class Board extends React.Component {
@@ -38,7 +37,7 @@ class Board extends React.Component {
 
 		const Rows = rownums.map(num => <Row onClickPeg={this.onClickPeg} key={num}/>)
 		return <div>
-			<ColorPicker showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace} ColorScheme={ColorScheme}/>
+			<ColorPicker showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 		</div>
 	}

@@ -1,4 +1,5 @@
 import React from 'react'
+import ColorScheme from './ColorScheme'
 import '../App.css'
 
 function ColorPicker(props){
@@ -6,7 +7,7 @@ function ColorPicker(props){
   const colorBlock = colIndex => {
     return (<div className="color"
         onClick={() => console.log(colIndex)}
-        style={{backgroundColor: props.ColorScheme[colIndex]}}>
+        style={{backgroundColor: ColorScheme[colIndex]}}>
     </div>)
   }
 
