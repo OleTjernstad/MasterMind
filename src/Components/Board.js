@@ -1,5 +1,6 @@
 import React from 'react'
 import Row from './Row'
+import ColorPicker from './ColorPicker'
 import '../App.css';
 
 function Board(props) {
@@ -20,6 +21,7 @@ function Board(props) {
 
 	const Rows = rownums.map(num => <Row key={num}/>)
 	return <div>
+		<ColorPicker/>
 		<div className="board">{Rows}</div>
 	</div>
 }
