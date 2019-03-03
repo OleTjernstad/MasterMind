@@ -6,10 +6,11 @@ import '../App.css';
 function Row(props) {
 	return <div className="row frame">
 		<div className="pinHoleRow">
-			<Peg colIndex={props.colIndex} onClickPeg={props.onClickPeg}/>
-			<Peg colIndex={props.colIndex} onClickPeg={props.onClickPeg}/>
-			<Peg colIndex={props.colIndex} onClickPeg={props.onClickPeg}/>
-			<Peg colIndex={props.colIndex} onClickPeg={props.onClickPeg}/>
+			<Peg colIndex={props.rowState.peg1} onClickPeg={props.onClickPeg}/>
+			<Peg colIndex={props.rowState.peg2} onClickPeg={props.onClickPeg}/>
+			<Peg colIndex={props.rowState.peg3} onClickPeg={props.onClickPeg}/>
+			<Peg colIndex={props.rowState.peg4} onClickPeg={props.onClickPeg}/>
+
 		</div>
 		<div className="check">
 			<div className="checkBox">
