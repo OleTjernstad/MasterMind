@@ -13,73 +13,85 @@ class Board extends React.Component {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			2: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			3: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			4: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			5: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			6: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			7: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			8: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			9: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			10: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			11: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			},
 			12: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
-				peg4: 0
+				peg4: 0,
+				editable: 0
 			}
 		}
 
