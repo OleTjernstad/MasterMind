@@ -15,7 +15,7 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0
+				editable: 1
 			},
 			2: {
 				peg1: 0,
@@ -98,20 +98,23 @@ class Board extends React.Component {
 
 	}
 
-	onClickPeg = (event) => {
-		const peg = event.target
+	onClickPeg = (event, key, pegID) => {
+		const peg = event.target;
+		console.log(event)
+		console.log(key)
+		console.log(pegID)
 		const position = peg.getBoundingClientRect()
 		this.setState({peg: peg})
 		this.setState({colorPickerPlace: position})
 		this.setState({showColorPicker: true})
 	}
 
-	onClickColor = (colindex) => {
+	onClickColor = (colIndex) => {
+		console.log(colIndex)
+		console.log(this.state.peg.index)
 	}
 
-	noop = () =>{
-
-	}
+	noop = () => {}
 
 	render() {
 		const rownums = [
@@ -129,7 +132,10 @@ class Board extends React.Component {
 			12
 		]
 
-		const Rows = rownums.map(num => <Row onClickPeg={this.state.[num].editable ? this.onClickPeg: this.noop} rowState={this.state[num]} key={num}/>)
+		const Rows = rownums.map(num => <Row onClickPeg={(
+				this.state[num].editable)
+				? this.onClickPeg
+				: this.noop} rowState={this.state[num]} rowID={num} key={num}/>)
 		return <div>
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
