@@ -14,10 +14,16 @@ function Row(props) {
 		</div>
 		<div className="check">
 			<div className="checkBox">
-				<ScorePeg/>
-				<ScorePeg/>
-				<ScorePeg/>
-				<ScorePeg/>
+				{
+					props.rowState.enableCheck
+						? <button>Check</button>
+						: <div>
+								<ScorePeg/>
+								<ScorePeg/>
+								<ScorePeg/>
+								<ScorePeg/>
+							</div>
+				}
 			</div>
 		</div>
 	</div>
