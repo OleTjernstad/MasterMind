@@ -112,8 +112,14 @@ class Board extends React.Component {
 	}
 
 	onClickColor = (colIndex) => {
-		console.log(colIndex)
-		console.log(this.state.peg.index)
+		this.setState(prevState => ({
+			[this.state.peg.rowID]: {
+				...prevState[this.state.peg.rowID],
+				[this.state.peg.pegID]: colIndex
+			}
+		}))
+
+		this.setState({showColorPicker: false})
 	}
 
 	noop = () => {}
