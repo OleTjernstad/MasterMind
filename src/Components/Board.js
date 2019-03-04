@@ -100,11 +100,13 @@ class Board extends React.Component {
 
 	onClickPeg = (event, rowID, pegID) => {
 		const peg = event.target;
-		console.log(event)
-		console.log(rowID)
-		console.log(pegID)
 		const position = peg.getBoundingClientRect()
-		this.setState({peg: peg})
+		this.setState({
+			peg: {
+				rowID: rowID,
+				pegID: pegID
+			}
+		})
 		this.setState({colorPickerPlace: position})
 		this.setState({showColorPicker: true})
 	}
