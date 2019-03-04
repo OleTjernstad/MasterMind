@@ -104,6 +104,13 @@ class Board extends React.Component {
 		this.setState({showColorPicker: true})
 	}
 
+	onClickColor = (colindex) => {
+
+		this.setState({
+		})
+
+	}
+
 	noop = () =>{
 
 	}
@@ -126,7 +133,7 @@ class Board extends React.Component {
 
 		const Rows = rownums.map(num => <Row onClickPeg={this.state.[num].editable ? this.onClickPeg: this.noop} rowState={this.state[num]} key={num}/>)
 		return <div>
-			<ColorPicker showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
+			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 		</div>
 	}
