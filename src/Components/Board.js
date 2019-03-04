@@ -98,10 +98,10 @@ class Board extends React.Component {
 
 	}
 
-	onClickPeg = (event, key, pegID) => {
+	onClickPeg = (event, rowID, pegID) => {
 		const peg = event.target;
 		console.log(event)
-		console.log(key)
+		console.log(rowID)
 		console.log(pegID)
 		const position = peg.getBoundingClientRect()
 		this.setState({peg: peg})
