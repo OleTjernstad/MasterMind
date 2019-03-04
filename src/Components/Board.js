@@ -110,16 +110,22 @@ class Board extends React.Component {
 
 	}
 
-	ifAllColorsSelected = (rowID) => {
+	ifAllColorsSelected = () => {
 		let pegs = this.state[this.state.peg.rowID]
+		console.log(pegs)
 		if (pegs.peg1 > 0 && pegs.peg2 > 0 && pegs.peg3 > 0 && pegs.peg4 > 0) {
 			this.setState(prevState => ({
 				[this.state.peg.rowID]: {
 					...prevState[this.state.peg.rowID],
-					[enableCheck]: true
+					enableCheck: true
 				}
 			}))
 		}
+	}
+
+	componentDidMount() {
+		if (this.state.peg.hasOwnProperty('rowID')) 
+			this.ifAllColorsSelected()
 	}
 
 	onClickPeg = (event, rowID, pegID) => {
@@ -142,7 +148,6 @@ class Board extends React.Component {
 				[this.state.peg.pegID]: colIndex
 			}
 		}))
-
 		this.setState({showColorPicker: false})
 	}
 
