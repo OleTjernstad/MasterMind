@@ -9,6 +9,7 @@ class Board extends React.Component {
 		this.state = {
 			showColorPicker: false,
 			colorPickerPlace: {},
+			peg: {},
 			1: {
 				peg1: 0,
 				peg2: 0,
@@ -100,15 +101,12 @@ class Board extends React.Component {
 	onClickPeg = (event) => {
 		const peg = event.target
 		const position = peg.getBoundingClientRect()
+		this.setState({peg: peg})
 		this.setState({colorPickerPlace: position})
 		this.setState({showColorPicker: true})
 	}
 
 	onClickColor = (colindex) => {
-
-		this.setState({
-		})
-
 	}
 
 	noop = () =>{
