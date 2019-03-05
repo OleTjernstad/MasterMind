@@ -123,11 +123,6 @@ class Board extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-		if (this.state.peg.hasOwnProperty('rowID')) 
-			this.ifAllColorsSelected()
-	}
-
 	onClickPeg = (event, rowID, pegID) => {
 		const peg = event.target;
 		const position = peg.getBoundingClientRect()
