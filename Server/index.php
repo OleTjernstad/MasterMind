@@ -9,7 +9,7 @@
 /**
  * Composer
  */
-require dirname(__DIR__) . '/Core/Load.php';
+require dirname(__FILE__) . '/Core/Load.php';
 
 
 /**
