@@ -24,3 +24,7 @@ set_exception_handler('Core\Error::exceptionHandler');
  * Sessions
  */
 session_start();
+
+$app = new Controller();
+
+$app->App();
