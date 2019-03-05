@@ -15,7 +15,7 @@ function Row(props) {
 		<div className="check">
 			<div className="checkBox">
 				{
-					props.rowState.enableCheck
+					props.rowState.editable
 						? <button>Check</button>
 						: <div>
 								<ScorePeg/>

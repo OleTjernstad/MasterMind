@@ -15,111 +15,94 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 1,
-				enableCheck: false
+				editable: 1
 			},
 			2: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			3: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			4: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			5: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			6: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			7: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			8: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			9: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			10: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			11: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			},
 			12: {
 				peg1: 0,
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
-				editable: 0,
-				enableCheck: false
+				editable: 0
 			}
 		}
 
 	}
 
 	ifAllColorsSelected = () => {
-		let pegs = this.state[this.state.peg.rowID]
-		console.log(pegs)
-		if (pegs.peg1 > 0 && pegs.peg2 > 0 && pegs.peg3 > 0 && pegs.peg4 > 0) {
-			this.setState(prevState => ({
-				[this.state.peg.rowID]: {
-					...prevState[this.state.peg.rowID],
-					enableCheck: true
-				}
-			}))
+		if (this.state.peg.hasOwnProperty('rowID')) {
+			let pegs = this.state[this.state.peg.rowID]
+			console.log(pegs)
+			if (pegs.peg1 > 0 && pegs.peg2 > 0 && pegs.peg3 > 0 && pegs.peg4 > 0) {}
 		}
 	}
 
