@@ -1,8 +1,8 @@
 <?php
 
-Class Controller {
-  public function App()
-  {
-    
-  }
-} ?>
+class Controller
+{
+    public function App()
+    {
+    }
+}
