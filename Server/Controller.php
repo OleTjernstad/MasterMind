@@ -4,9 +4,14 @@ class Controller
 {
     public function App()
     {
-        if (isset($_SESSION['fasit'])) {
+        if (isset($_SESSION['pegs'])) {
+            $pegs = $_SESSION['pegs'];
         } else {
-            Pegs::NewPegColors();
+            $pegs = new Pegs();
+            $_SESSION['pegs'] = $pegs;
+            $pegs->NewPegColors();
         }
+
+        print_r($pegs->test());
     }
 }
