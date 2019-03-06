@@ -21,4 +21,12 @@ class Pegs
     {
         return rand(1, 6);
     }
+    /**
+     * Sjekke svaret fra bruker
+     * @param  array  $answer svaret
+     * @return array         scorePinsColors
+     */
+    public function checkAnswer($answer = [])
+    {
+    }
 }
