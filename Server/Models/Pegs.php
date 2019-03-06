@@ -28,5 +28,10 @@ class Pegs
      */
     public function checkAnswer($answer = [])
     {
+        $fasit = $this->pegColors;
+        foreach ($fasit as $key => $value) {
+
+          if($answer[$key] == $value)
+        }
     }
 }
