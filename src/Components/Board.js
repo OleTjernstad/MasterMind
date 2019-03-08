@@ -120,17 +120,24 @@ class Board extends React.Component {
 	}
 
 	onClickCheckButton = (rowID) => {
-		console.log(rowID)
+		this.checkAnswerOnserver(this.state[rowID])
 	}
 
-	checkAnswerOnserver = () => {
+	checkAnswerOnserver = (data) => {
 		fetch('http://mastermind.local/', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({firstParam: 'yourValue', secondParam: 'yourOtherValue'})
+			body: JSON.stringify({
+				answer: {
+					peg1: data.peg1,
+					peg2: data.peg2,
+					peg3: data.peg3,
+					peg4: data.peg4
+				}
+			})
 		});
 	}
 
