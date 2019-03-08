@@ -12,6 +12,8 @@ class Controller
             $pegs->NewPegColors();
         }
 
-        print_r($pegs->test());
+        $pegs->checkAnswer([1, 2, 3, 4]);
+
+        print_r($pegs);
     }
 }
