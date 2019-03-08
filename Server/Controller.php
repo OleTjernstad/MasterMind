@@ -14,6 +14,8 @@ class Controller
 
         $pegs->checkAnswer(['peg1' =>5, 'peg2' => 6, 'peg3' => 2, 'peg4' => 2]);
 
-        print_r($pegs);
+        header('Content-Type: application/json');
+        echo json_encode($pegs);
+        die();
     }
 }

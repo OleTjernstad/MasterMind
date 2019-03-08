@@ -54,6 +54,7 @@ class Error
             $message .= "<p>Thrown in '" . $exception->getFile() . "' on line " . $exception->getLine() . "</p>";
             header('Content-Type: application/json');
             echo json_encode(['code' => $code, 'message' =>$message]);
+            die();
         } else {
             $log = dirname(__DIR__) . '/logs/' . date('Y-m-d') . '.txt';
             ini_set('error_log', $log);
