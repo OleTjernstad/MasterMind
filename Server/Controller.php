@@ -12,7 +12,7 @@ class Controller
             $pegs->NewPegColors();
         }
 
-        $pegs->checkAnswer([1, 2, 3, 4]);
+        $pegs->checkAnswer(['peg1' =>5, 'peg2' => 6, 'peg3' => 2, 'peg4' => 2]);
 
         print_r($pegs);
     }
