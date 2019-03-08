@@ -43,11 +43,10 @@ class Pegs
         }
 
         foreach ($answer as $key => $value) {
-          if(array_search($value, $fasit))
-          {
-            $this->score[] = 1;
-            unset($fasit[$key])
-          }
+            if (array_search($value, $fasit)) {
+                $this->score[] = 1;
+                unset($fasit[$key]);
+            }
         }
     }
 }
