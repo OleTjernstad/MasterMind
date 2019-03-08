@@ -31,6 +31,7 @@ class Pegs
      */
     public function checkAnswer($answer = [])
     {
+        $this->score = [];
         $fasit = $this->pegColors;
         // correct color in correct place
         foreach ($fasit as $key => $value) {
@@ -43,9 +44,10 @@ class Pegs
         }
 
         foreach ($answer as $key => $value) {
-            if (array_search($value, $fasit)) {
+            $placeKey = array_search($value, $fasit);
+            if ($placeKey) {
                 $this->score[] = 1;
-                unset($fasit[$key]);
+                unset($fasit[$placeKey]);
             }
         }
     }
