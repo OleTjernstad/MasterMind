@@ -138,7 +138,11 @@ class Board extends React.Component {
 					peg4: data.peg4
 				}
 			})
-		});
+		})
+			.then((response) => response.json())
+			.then((responseJson) => {
+				console.log(responseJson)
+			})
 	}
 
 	onClickColor = (colIndex) => {
