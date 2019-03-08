@@ -15,6 +15,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 1
 			},
 			2: {
@@ -22,6 +26,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			3: {
@@ -29,6 +37,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			4: {
@@ -36,6 +48,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			5: {
@@ -43,6 +59,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			6: {
@@ -50,6 +70,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			7: {
@@ -57,6 +81,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			8: {
@@ -64,6 +92,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			9: {
@@ -71,6 +103,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			10: {
@@ -78,6 +114,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			11: {
@@ -85,6 +125,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			},
 			12: {
@@ -92,6 +136,10 @@ class Board extends React.Component {
 				peg2: 0,
 				peg3: 0,
 				peg4: 0,
+				score1: 0,
+				score2: 0,
+				score3: 0,
+				score4: 0,
 				editable: 0
 			}
 		}
@@ -141,8 +189,14 @@ class Board extends React.Component {
 		})
 			.then((response) => response.json())
 			.then((responseJson) => {
-				console.log(responseJson)
+				this.handleResponseFromServer(responseJson)
 			})
+	}
+
+	handleResponseFromServer = (response) => {
+
+		console.log(response)
+
 	}
 
 	onClickColor = (colIndex) => {
