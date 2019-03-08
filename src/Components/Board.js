@@ -119,6 +119,21 @@ class Board extends React.Component {
 		this.setState({showColorPicker: true})
 	}
 
+	onClickCheckButton = (rowID) => {
+		console.log(rowID)
+	}
+
+	checkAnswerOnserver = () => {
+		fetch('http://mastermind.local/', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({firstParam: 'yourValue', secondParam: 'yourOtherValue'})
+		});
+	}
+
 	onClickColor = (colIndex) => {
 		this.setState(prevState => ({
 			[this.state.peg.rowID]: {
@@ -150,7 +165,7 @@ class Board extends React.Component {
 		const Rows = rownums.map(num => <Row onClickPeg={(
 				this.state[num].editable)
 				? this.onClickPeg
-				: this.noop} rowState={this.state[num]} rowID={num} key={num}/>)
+				: this.noop} rowState={this.state[num]} onClickCheckButton={this.onClickCheckButton} rowID={num} key={num}/>)
 		return <div>
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
