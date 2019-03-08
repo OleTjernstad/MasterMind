@@ -4,10 +4,22 @@ class Controller
 {
     public function App()
     {
-        $req_dump = print_r(json_decode(file_get_contents('php://input'), true), true);
-        $fp = fopen('request.log', 'a');
-        fwrite($fp, $req_dump);
-        fclose($fp);
+        // $req_dump = print_r(json_decode(file_get_contents('php://input'), true), true);
+        // $fp = fopen('request.log', 'a');
+        // fwrite($fp, $req_dump);
+        // fclose($fp);
+        //
+        header("Access-Control-Allow-Origin: *");
+        header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        header('Content-Type: application/json');
+
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+            http_response_code(200);
+            echo json_encode(['status' => 'success', 'message' =>'successfull request']);
+            die();
+        }
+        $response = json_decode(file_get_contents('php://input'), true);
 
 
         if (isset($_SESSION['pegs'])) {
@@ -18,11 +30,13 @@ class Controller
             $pegs->NewPegColors();
         }
 
-        $pegs->checkAnswer(['peg1' =>5, 'peg2' => 6, 'peg3' => 2, 'peg4' => 2]);
+        $pegs->checkAnswer($response['answer']);
 
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-        header('Content-Type: application/json');
+        $req_dump = print_r($pegs, true);
+        $fp = fopen('request.log', 'a');
+        fwrite($fp, $req_dump);
+        fclose($fp);
+
         echo json_encode($pegs);
         die();
     }
