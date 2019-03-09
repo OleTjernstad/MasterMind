@@ -45,8 +45,7 @@ class Error
 
         $showError = false;
 
-
-        if (true) {
+        if (false) {
             $message = "<h1>Fatal error</h1>";
             $message .= "<p>Uncaught exception: '" . get_class($exception) . "'</p>";
             $message .= "<p>Message: '" . $exception->getMessage() . "'</p>";
@@ -56,17 +55,22 @@ class Error
             echo json_encode(['code' => $code, 'message' =>$message]);
             die();
         } else {
-            $log = dirname(__DIR__) . '/logs/' . date('Y-m-d') . '.txt';
+            $log = dirname(__FILE__) . '/logs/' . date('Y-m-d') . '.txt';
             ini_set('error_log', $log);
 
-            $message = "Uncaught exception: '" . get_class($exception) . "'";
+            $message = "\nUncaught exception: '" . get_class($exception) . "'";
             $message .= " with message '" . $exception->getMessage() . "'";
             $message .= "\nStack trace: " . $exception->getTraceAsString();
             $message .= "\nThrown in '" . $exception->getFile() . "' on line " . $exception->getLine();
 
-            error_log($message);
 
-            //View::renderTemplate("$code.html");
+            $fp = fopen(date('Y-m-d').'.log', 'a');
+            fwrite($fp, $message);
+            fclose($fp);
+
+            header('Content-Type: application/json');
+            echo json_encode(['code' => $code, 'message' =>'Det har oppstått en feil']);
+            die();
         }
     }
 }
