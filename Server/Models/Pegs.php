@@ -6,7 +6,7 @@ class Pegs
 
     public $score = [];
 
-    private $numberCorrect = 0;
+    private $numberCorrect = 4;
 
     private $kordinater = 'N60 ***';
 
@@ -59,7 +59,7 @@ class Pegs
 
     public function ifAllFourIsCorrect()
     {
-        if ($this->$numberCorrect == 4) {
+        if ($this->numberCorrect == 4) {
             $this->completed = true;
             $this->FinaleKoordinater = $this->kordinater;
 
