@@ -1,6 +1,7 @@
 import React from 'react'
 import Row from './Row'
 import ColorPicker from './ColorPicker'
+import Message from './Message'
 import '../App.css';
 
 class Board extends React.Component {
