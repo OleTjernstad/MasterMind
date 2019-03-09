@@ -169,6 +169,21 @@ class Board extends React.Component {
 
 	onClickCheckButton = (rowID) => {
 		this.checkAnswerOnserver(this.state[rowID])
+
+		this.updateRowState(rowID, 'editable', 0)
+		this.updateRowState(rowID + 1, 'editable', 1)
+
+	}
+
+	updateRowState = (rowID, updateKey, value) => {
+
+		this.setState(prevState => ({
+			[rowID]: {
+				...prevState[rowID],
+				[updateKey]: value
+			}
+		}));
+
 	}
 
 	checkAnswerOnserver = (data) => {
@@ -200,12 +215,7 @@ class Board extends React.Component {
 		response
 			.score
 			.forEach((value) => {
-				this.setState(prevState => ({
-					[this.state.peg.rowID]: {
-						...prevState[this.state.peg.rowID],
-						['score' + loop]: value
-					}
-				}));
+				this.updateRowState(this.state.peg.rowID, 'score' + loop, value)
 				loop++;
 			});
 
