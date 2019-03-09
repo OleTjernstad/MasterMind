@@ -225,7 +225,9 @@ class Board extends React.Component {
 				this.updateRowState(this.state.peg.rowID, 'score' + loop, value)
 				loop++;
 			});
-
+		if (response.completed) {
+			console.log('du vant')
+		}
 	}
 
 	onClickColor = (colIndex) => {
