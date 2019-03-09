@@ -194,9 +194,22 @@ class Board extends React.Component {
 	}
 
 	handleResponseFromServer = (response) => {
-
+		var loop = 1;
 		console.log(response)
+		console.log(this.state.peg.rowID)
+		response
+			.score
+			.forEach((value) => {
+				this.setState(prevState => ({
+					[this.state.peg.rowID]: {
+						...prevState[this.state.peg.rowID],
+						['score' + loop]: value
+					}
+				}));
+				loop++;
+			});
 
+		console.log(this.state[this.state.peg.rowID]);
 	}
 
 	onClickColor = (colIndex) => {
