@@ -6,6 +6,10 @@ class Pegs
 
     public $score = [];
 
+    private $numberCorrect = 0;
+
+    private $kordinater = 'N60 ***';
+
     public function NewPegColors()
     {
         for ($i=1; $i < 5 ; $i++) {
@@ -37,6 +41,7 @@ class Pegs
         foreach ($fasit as $key => $value) {
             if ($answer[$key] == $value) {
                 $this->score[] = 'correct';
+                $this->numberCorrect++;
 
                 unset($fasit[$key]);
                 unset($answer[$key]);
@@ -50,5 +55,16 @@ class Pegs
                 unset($fasit[$placeKey]);
             }
         }
+    }
+
+    public function ifAllFourIsCorrect()
+    {
+        if ($this->$numberCorrect == 4) {
+            $this->completed = true;
+            $this->FinaleKoordinater = $this->kordinater;
+
+            return true;
+        }
+        return false;
     }
 }
