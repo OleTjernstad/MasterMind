@@ -10,6 +10,7 @@ class Board extends React.Component {
 		this.state = {
 			showColorPicker: false,
 			colorPickerPlace: {},
+			showMessageBox: false,
 			peg: {},
 			1: {
 				peg1: 0,
@@ -301,7 +302,7 @@ class Board extends React.Component {
 		return <div>
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
-			<Message resetGameBoard={this.resetGameBoard}/>
+			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox}/>
 		</div>
 	}
 }
