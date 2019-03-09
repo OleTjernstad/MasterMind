@@ -194,7 +194,7 @@ class Board extends React.Component {
 	}
 
 	checkAnswerOnserver = (data) => {
-		fetch('https://olet.no/GC82P3Y/api/', {
+		fetch('http://mastermind.local/', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
