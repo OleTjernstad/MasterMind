@@ -218,7 +218,7 @@ class Board extends React.Component {
 	handleResponseFromServer = (response) => {
 		var loop = 1;
 		console.log(response)
-		console.log(this.state.peg.rowID)
+
 		response
 			.score
 			.forEach((value) => {
@@ -226,7 +226,6 @@ class Board extends React.Component {
 				loop++;
 			});
 
-		console.log(this.state[this.state.peg.rowID]);
 	}
 
 	onClickColor = (colIndex) => {
