@@ -82,3 +82,17 @@
   height: 40px;
   cursor: pointer;
 }
+
+.messageBox {
+  height: 100px;
+  width: 250px;
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.messageBox p {
+  text-align: center;
+}
