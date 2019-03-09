@@ -2,7 +2,7 @@ import React from 'react'
 import '../App.css';
 
 function Message(props) {
-	return <div className="frame messageBox">
+	return <div className="frame messageBox" style={props.showMessageBox ? {display: 'block'}: {}}>
     <p>
       Du feilet, prøv igjen
     </p>
