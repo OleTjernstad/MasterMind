@@ -3,9 +3,9 @@ import '../App.css';
 
 function Message(props) {
 	return <div className="frame messageBox" style={props.showMessageBox ? {display: 'block'}: {}}>
-    <p>
+    {props.completed ? <p>Gratuler, du fant koden: {props.koordinater}</p>: <p>
       Du feilet, prøv igjen
-    </p>
+    </p>}
     <p>
 
       <button onClick={() => props.resetGameBoard()}>Prøv igjen</button>
