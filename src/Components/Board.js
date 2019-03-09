@@ -11,6 +11,8 @@ class Board extends React.Component {
 			showColorPicker: false,
 			colorPickerPlace: {},
 			showMessageBox: false,
+			completed: false,
+			koordinater: '',
 			peg: {},
 			1: {
 				peg1: 0,
@@ -228,11 +230,14 @@ class Board extends React.Component {
 				loop++;
 			});
 		if (response.completed) {
-			console.log('du vant')
+			this.setState({showMessageBox: true})
+			this.setState({koordinater: response.FinaleKoordinater})
+			this.setState({completed: true})
 		}
 	}
 
 	resetGameBoard = () => {
+		this.setState({showMessageBox: false})
 		for (var i = 1; i <= 12; i++) {
 			if (i === 1) {
 				this.setState({
@@ -302,7 +307,7 @@ class Board extends React.Component {
 		return <div>
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
-			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox}/>
+			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox} completed={this.state.completed} koordinater={this.state.koordinater}/>
 		</div>
 	}
 }
