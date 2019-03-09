@@ -6,6 +6,8 @@ class Pegs
 
     public $score = [];
 
+    public $completed = false;
+
     private $numberCorrect = 4;
 
     private $kordinater = 'N60 ***';
