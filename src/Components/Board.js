@@ -231,6 +231,14 @@ class Board extends React.Component {
 		}
 	}
 
+	resetGameBoard = () => {
+		let i;
+		for (i = 1; i <= 12; i++) {
+			console.log(i)
+		}
+
+	}
+
 	onClickColor = (colIndex) => {
 		this.setState(prevState => ({
 			[this.state.peg.rowID]: {
@@ -266,6 +274,7 @@ class Board extends React.Component {
 		return <div>
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
+			<Message resetGameBoard={this.resetGameBoard}/>
 		</div>
 	}
 }

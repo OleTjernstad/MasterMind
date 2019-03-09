@@ -8,10 +8,10 @@ function Message(props) {
     </p>
     <p>
 
-      <button>Prøv igjen</button>
+      <button onClick={() => props.resetGameBoard()}>Prøv igjen</button>
 
     </p>
   </div>
 }
 
-export default Peg
+export default Message
