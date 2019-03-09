@@ -27,6 +27,10 @@ class Controller
 
         $pegs->checkAnswer($response['answer']);
 
+        if ($pegs->ifAllFourIsCorrect()) {
+            $_SESSION['pegs'] = '';
+        }
+
         echo json_encode($pegs);
         die();
     }
