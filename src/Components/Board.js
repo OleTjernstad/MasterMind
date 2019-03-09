@@ -232,11 +232,38 @@ class Board extends React.Component {
 	}
 
 	resetGameBoard = () => {
-		let i;
-		for (i = 1; i <= 12; i++) {
-			console.log(i)
-		}
+		for (var i = 1; i <= 12; i++) {
+			if (i === 1) {
+				this.setState({
+					[i]: {
+						peg1: 0,
+						peg2: 0,
+						peg3: 0,
+						peg4: 0,
+						score1: 0,
+						score2: 0,
+						score3: 0,
+						score4: 0,
+						editable: 1
+					}
+				})
+			} else {
+				this.setState({
+					[i]: {
+						peg1: 0,
+						peg2: 0,
+						peg3: 0,
+						peg4: 0,
+						score1: 0,
+						score2: 0,
+						score3: 0,
+						score4: 0,
+						editable: 0
+					}
+				})
+			}
 
+		}
 	}
 
 	onClickColor = (colIndex) => {
