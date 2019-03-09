@@ -146,9 +146,9 @@ class Board extends React.Component {
 
 	}
 
-	ifAllColorsSelected = () => {
+	ifAllColorsSelected = (rowID) => {
 		if (this.state.peg.hasOwnProperty('rowID')) {
-			let pegs = this.state[this.state.peg.rowID]
+			let pegs = this.state[rowID]
 			console.log(pegs)
 			if (pegs.peg1 > 0 && pegs.peg2 > 0 && pegs.peg3 > 0 && pegs.peg4 > 0) {
 				return true;
@@ -172,11 +172,12 @@ class Board extends React.Component {
 	}
 
 	onClickCheckButton = (rowID) => {
-		if (this.ifAllColorsSelected()) {
+		if (this.ifAllColorsSelected(rowID)) {
 			this.checkAnswerOnserver(this.state[rowID])
 
 			this.updateRowState(rowID, 'editable', 0)
 			this.updateRowState(rowID + 1, 'editable', 1)
+
 		}
 
 	}
