@@ -4,9 +4,9 @@ class Controller
 {
     public function App()
     {
-        header("Access-Control-Allow-Origin: *");
-        header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        // header("Access-Control-Allow-Origin: *");
+        // header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        // header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         header('Content-Type: application/json');
 
         if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
