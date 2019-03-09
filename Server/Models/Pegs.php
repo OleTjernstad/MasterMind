@@ -8,7 +8,7 @@ class Pegs
 
     public $completed = false;
 
-    private $numberCorrect = 4;
+    private $numberCorrect = 0;
 
     private $kordinater = 'N60 ***';
 
