@@ -150,8 +150,12 @@ class Board extends React.Component {
 		if (this.state.peg.hasOwnProperty('rowID')) {
 			let pegs = this.state[this.state.peg.rowID]
 			console.log(pegs)
-			if (pegs.peg1 > 0 && pegs.peg2 > 0 && pegs.peg3 > 0 && pegs.peg4 > 0) {}
+			if (pegs.peg1 > 0 && pegs.peg2 > 0 && pegs.peg3 > 0 && pegs.peg4 > 0) {
+				return true;
+			}
+
 		}
+		return false;
 	}
 
 	onClickPeg = (event, rowID, pegID) => {
@@ -168,10 +172,12 @@ class Board extends React.Component {
 	}
 
 	onClickCheckButton = (rowID) => {
-		this.checkAnswerOnserver(this.state[rowID])
+		if (this.ifAllColorsSelected()) {
+			this.checkAnswerOnserver(this.state[rowID])
 
-		this.updateRowState(rowID, 'editable', 0)
-		this.updateRowState(rowID + 1, 'editable', 1)
+			this.updateRowState(rowID, 'editable', 0)
+			this.updateRowState(rowID + 1, 'editable', 1)
+		}
 
 	}
 
