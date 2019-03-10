@@ -241,6 +241,7 @@ class Board extends React.Component {
 
 	resetGameBoard = () => {
 		this.setState({showMessageBox: false})
+		fetch('https://olet.no/GC82P3Y/api/?reset=reset')
 		for (var i = 1; i <= 12; i++) {
 			if (i === 1) {
 				this.setState({
