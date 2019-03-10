@@ -14,7 +14,7 @@ class Board extends React.Component {
 			showMessageBox: false,
 			completed: false,
 			koordinater: '',
-			showRules: true,
+			showRules: false,
 			peg: {},
 			1: {
 				peg1: 0,
