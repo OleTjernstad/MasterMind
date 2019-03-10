@@ -5,19 +5,18 @@ function Rules(props) {
 	return <div style={{
 			padding: '10px'
 		}}>
-		<p>At the beginning of each game the computer generates a secret code of four colors. The colors are always chosen from the same six colors. Duplicates are allowed, so the computer could even choose the same color four times.</p>
+		<p>Ved start av spill genereres en fire farget kode, av seks forskjellige farger. Det er lov å gjenta en farge flere ganger. Koden kan til og med være fire like Ditt mål er å avdekke hvilke farger koden består av, og sette de i samme rekkefølge.</p>
 
-		<p>Your objective is to guess the secret code. You will have to guess the colors and put them in the same order as they are in the secret code.</p>
-
-		<p>Choose four colors in the next available row and then click on the Check button. The computer will score your guess in the following way:</p>
+		<p>Velg fire farger i neste ledige rad, klikk så på kontroll, så vil datamaskinen bedømme koden din på denne måten:</p>
 		<ul>
 			<li>
-				For each guess that is right in both color and position you get a black point</li>
-			<li>For each guess that is right in color but not in position you get a red point</li>
+				For hver farge som er riktig, og på riktig plass får du et svart merke</li>
+			<li>For hver farge som er riktig, men på feil plass får du et rødt merke
+			</li>
 		</ul>
-		<p>You have twelve rows to make your guesses, if you exhaust all of them without guessing the code, you lost the game.</p>
+		<p>Du har tolv rader på deg å gjette, om du ikke klarer det på de radene vil du tape og du må resette spillet, det vil da bli generert en ny kode.</p>
 
-		<p>Good Luck!</p>
+		<p>Lykke til!</p>
 	</div>
 }
 
