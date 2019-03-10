@@ -2,6 +2,7 @@ import React from 'react'
 import Row from './Row'
 import ColorPicker from './ColorPicker'
 import Message from './Message'
+import Rules from './Rules'
 import '../App.css';
 
 class Board extends React.Component {
@@ -13,6 +14,7 @@ class Board extends React.Component {
 			showMessageBox: false,
 			completed: false,
 			koordinater: '',
+			showRules: true,
 			peg: {},
 			1: {
 				peg1: 0,
@@ -314,6 +316,11 @@ class Board extends React.Component {
 			<h1 style={{
 					textAlign: 'center'
 				}}>Mastermind</h1>
+			{
+				this.state.showRules
+					? <Rules/>
+					: <div></div>
+			}
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox} completed={this.state.completed} koordinater={this.state.koordinater}/>
