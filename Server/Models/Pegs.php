@@ -12,6 +12,8 @@ class Pegs
 
     private $kordinater = 'N60 ***';
 
+    public $lapNumber = 0;
+
     public function NewPegColors()
     {
         for ($i=1; $i < 5 ; $i++) {
@@ -21,9 +23,9 @@ class Pegs
 
         return $this->pegColors;
     }
-    public function test()
+    public function lapNumber()
     {
-        return $this->pegColors;
+        $this->lapNumber++;
     }
 
     private function radomColor()
