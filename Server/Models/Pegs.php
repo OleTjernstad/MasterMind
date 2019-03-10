@@ -38,6 +38,7 @@ class Pegs
     public function checkAnswer($answer = [])
     {
         $this->score = [];
+        $this->numberCorrect = 0;
         $fasit = $this->pegColors;
         // correct color in correct place
         foreach ($fasit as $key => $value) {
