@@ -15,8 +15,9 @@ class Controller
             die();
         }
 
-        if ($_GET['reset'] == 'reset') {
+        if (isset($_GET['reset'])) {
             unset($_SESSION['pegs']);
+            session_destroy();
             http_response_code(200);
             echo json_encode(['status' => 'success', 'message' =>'colors reset']);
             die();
@@ -36,6 +37,7 @@ class Controller
 
         if ($pegs->ifAllFourIsCorrect()) {
             unset($_SESSION['pegs']);
+            session_destroy();
         }
 
         echo json_encode($pegs);
