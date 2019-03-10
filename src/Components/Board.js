@@ -316,11 +316,22 @@ class Board extends React.Component {
 			<h1 style={{
 					textAlign: 'center'
 				}}>Mastermind</h1>
+			<div style={{
+					margin: '10px',
+					textAlign: 'center'
+				}}>
+				<button onClick={() => {
+						this.setState(prevState => ({
+							showRules: !prevState.showRules
+						}));
+					}}>Regler</button>
+			</div>
 			{
 				this.state.showRules
 					? <Rules/>
 					: <div></div>
 			}
+
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox} completed={this.state.completed} koordinater={this.state.koordinater}/>
