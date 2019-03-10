@@ -14,6 +14,13 @@ class Controller
             echo json_encode(['status' => 'success', 'message' =>'successfull request']);
             die();
         }
+
+        if ($_GET['reset'] == 'reset') {
+            unset($_SESSION['pegs']);
+            http_response_code(200);
+            echo json_encode(['status' => 'success', 'message' =>'colors reset']);
+            die();
+        }
         $response = json_decode(file_get_contents('php://input'), true);
 
 
@@ -28,7 +35,7 @@ class Controller
         $pegs->checkAnswer($response['answer']);
 
         if ($pegs->ifAllFourIsCorrect()) {
-            $_SESSION['pegs'] = '';
+            unset($_SESSION['pegs']);
         }
 
         echo json_encode($pegs);
