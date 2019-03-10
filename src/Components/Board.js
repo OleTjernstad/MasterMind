@@ -233,7 +233,7 @@ class Board extends React.Component {
 			this.setState({showMessageBox: true})
 			this.setState({koordinater: response.FinaleKoordinater})
 			this.setState({completed: true})
-		} else if (this.state.peg.rowID === 12) {
+		} else if (this.state.peg.rowID === 12 || response.lapNumber > 12) {
 			this.setState({showMessageBox: true})
 
 		}
