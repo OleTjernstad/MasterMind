@@ -75,6 +75,10 @@
   padding: 6px;
 }
 
+.checkBox button {
+  height: 45px;
+}
+
 .color {
   margin: 4px;
   display: inline-block;
