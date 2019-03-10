@@ -34,6 +34,7 @@ class Controller
         }
 
         $pegs->checkAnswer($response['answer']);
+        $pegs->lapNumber();
 
         if ($pegs->ifAllFourIsCorrect()) {
             unset($_SESSION['pegs']);
