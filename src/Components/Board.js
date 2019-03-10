@@ -311,9 +311,17 @@ class Board extends React.Component {
 				? this.onClickPeg
 				: this.noop} rowState={this.state[num]} onClickCheckButton={this.onClickCheckButton} rowID={num} key={num}/>)
 		return <div>
+			<h1 style={{
+					textAlign: 'center'
+				}}>Mastermind</h1>
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox} completed={this.state.completed} koordinater={this.state.koordinater}/>
+			<p style={{
+					textAlign: 'center'
+				}}>
+				<strong>© Copyright</strong>
+				: Ole Tjernstad, 2019</p>
 		</div>
 	}
 }
