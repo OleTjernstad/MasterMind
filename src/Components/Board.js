@@ -340,6 +340,14 @@ class Board extends React.Component {
 			<ColorPicker onClickColor={this.onClickColor} showColorPicker={this.state.showColorPicker} colorPickerPlace={this.state.colorPickerPlace}/>
 			<div className="board">{Rows}</div>
 			<Message resetGameBoard={this.resetGameBoard} showMessageBox={this.state.showMessageBox} completed={this.state.completed} koordinater={this.state.koordinater}/>
+			<div style={{
+					margin: '10px',
+					textAlign: 'center'
+				}}>
+				<button onClick={() => {
+						this.resetGameBoard()
+					}}>Start på nytt</button>
+			</div>
 			<p style={{
 					textAlign: 'center'
 				}}>
