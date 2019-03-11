@@ -45,7 +45,7 @@ class Error
 
         $showError = false;
 
-        if (false) {
+        if (true) {
             $message = "<h1>Fatal error</h1>";
             $message .= "<p>Uncaught exception: '" . get_class($exception) . "'</p>";
             $message .= "<p>Message: '" . $exception->getMessage() . "'</p>";
