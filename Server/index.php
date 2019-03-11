@@ -40,8 +40,7 @@ if (isset($_GET['reset'])) {
     $app->reset();
 }
 
-if (isset($_GET['test'])) {
-    $app->test();
+if (isset($_GET['score'])) {
 }
 
 $app->App();
