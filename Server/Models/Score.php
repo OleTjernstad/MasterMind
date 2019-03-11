@@ -12,7 +12,21 @@ class Score
 
         $stmt->bindValue(':status', $status, PDO::PARAM_STR);
 
-        $result = $stmt->execute();
+        return $stmt->execute();
+    }
+
+    protected function count()
+    {
+        $sql = 'SELECT COUNT(status)
+                FROM stilling
+                WHERE status=:status;';
+
+        $db = self::getDB();
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindValue(':status', $status, PDO::PARAM_STR);
+
+        return $stmt->execute();
     }
 
     public function updateImage()
