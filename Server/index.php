@@ -27,4 +27,17 @@ session_start();
 
 $app = new Controller();
 
+// header("Access-Control-Allow-Origin: *");
+// header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+// header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Content-Type: application/json');
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    $app->options();
+}
+
+if (isset($_GET['reset'])) {
+    $app->reset();
+}
+
 $app->App();

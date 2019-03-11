@@ -4,24 +4,6 @@ class Controller
 {
     public function App()
     {
-        // header("Access-Control-Allow-Origin: *");
-        // header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-        // header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-        header('Content-Type: application/json');
-
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-            http_response_code(200);
-            echo json_encode(['status' => 'success', 'message' =>'successfull request']);
-            die();
-        }
-
-        if (isset($_GET['reset'])) {
-            unset($_SESSION['pegs']);
-            session_destroy();
-            http_response_code(200);
-            echo json_encode(['status' => 'success', 'message' =>'colors reset']);
-            die();
-        }
         $response = json_decode(file_get_contents('php://input'), true);
 
 
@@ -42,6 +24,22 @@ class Controller
         }
 
         echo json_encode($pegs);
+        die();
+    }
+
+    public function options()
+    {
+        http_response_code(200);
+        echo json_encode(['status' => 'success', 'message' =>'successfull request']);
+        die();
+    }
+
+    public function reset()
+    {
+        unset($_SESSION['pegs']);
+        session_destroy();
+        http_response_code(200);
+        echo json_encode(['status' => 'success', 'message' =>'colors reset']);
         die();
     }
 }
