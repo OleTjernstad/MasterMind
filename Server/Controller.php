@@ -19,6 +19,7 @@ class Controller
         $pegs->lapNumber();
 
         if ($pegs->ifAllFourIsCorrect()) {
+            Score::register('win');
             unset($_SESSION['pegs']);
             session_destroy();
         }
