@@ -43,9 +43,9 @@ class Controller
         die();
     }
 
-    public function score()
+    public function lose()
     {
-        Score::register();
+        Score::register('lose');
         http_response_code(200);
         echo json_encode(['status' => 'success', 'message' =>'tap registert']);
         die();
