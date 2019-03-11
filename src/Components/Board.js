@@ -237,8 +237,13 @@ class Board extends React.Component {
 			this.setState({completed: true})
 		} else if (this.state.peg.rowID === 12 || response.lapNumber > 12) {
 			this.setState({showMessageBox: true})
+			this.registerLoseOnServer() //registere tapet på server for å telle antall tap
 
 		}
+	}
+
+	registerLoseOnServer = () => {
+		fetch('https://olet.no/GC82P3Y/api/?score=lose')
 	}
 
 	resetGameBoard = () => {
