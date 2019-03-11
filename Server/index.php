@@ -41,6 +41,9 @@ if (isset($_GET['reset'])) {
 }
 
 if (isset($_GET['score'])) {
+    if ($_GET['score'] == 'lose') {
+        $app->score();
+    }
 }
 
 $app->App();

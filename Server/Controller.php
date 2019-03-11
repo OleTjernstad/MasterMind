@@ -43,8 +43,11 @@ class Controller
         die();
     }
 
-    public function test()
+    public function score()
     {
+        Score::register();
+        http_response_code(200);
+        echo json_encode(['status' => 'success', 'message' =>'tap registert']);
         die();
     }
 }
