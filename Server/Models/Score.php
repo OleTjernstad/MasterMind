@@ -52,6 +52,7 @@ class Score
         // OR SAVE TO A FILE
         // THE LAST PARAMETER IS THE QUALITY FROM 0 to 100
         imagejpeg($img, "mastermind.jpg", 100);
+        imagedestroy($img);
     }
 
     /**
