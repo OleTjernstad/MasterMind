@@ -37,10 +37,10 @@ class Score
         $lose = self::count('lose');
         $win = self::count('win');
         // FETCH IMAGE & WRITE TEXT
-        $img = imagecreatefromjpeg('badge.jpg');
+        $img = imagecreatefromjpeg('/home/otj/domains/olet.no/public_html/GC82P3Y/api/badge.jpg');
         $white = imagecolorallocate($img, 0, 0, 0);
 
-        $font = "C:\www\master-mind\Server\\28-Days-Later.ttf";
+        $font = "/home/otj/domains/olet.no/public_html/GC82P3Y/api/28-Days-Later.ttf";
         imagettftext($img, 68, 0, 260, 230, $white, $font, $win['status']);
         imagettftext($img, 48, 0, 760, 305, $white, $font, $lose['status']);
 
@@ -51,7 +51,7 @@ class Score
 
         // OR SAVE TO A FILE
         // THE LAST PARAMETER IS THE QUALITY FROM 0 to 100
-        imagejpeg($img, "mastermind.jpg", 100);
+        imagejpeg($img, "/home/otj/domains/olet.no/public_html/GC82P3Y/mastermind.jpg", 90);
         imagedestroy($img);
     }
 
@@ -65,8 +65,8 @@ class Score
         static $db = null;
 
         if ($db === null) {
-            $dsn = 'mysql:host=' . 'localhost' . ';dbname=' . 'mastermind' . ';charset=utf8';
-            $db = new PDO($dsn, 'root', '');
+            $dsn = 'mysql:host=' . 'localhost' . ';dbname=' . 'otj_mastermind' . ';charset=utf8';
+            $db = new PDO($dsn, 'otj_mastermind', 'idJtSOKl0dSSTy');
 
             // Throw an Exception when an error occurs
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
