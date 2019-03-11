@@ -12,9 +12,9 @@ class Score
 
         $stmt->bindValue(':status', $status, PDO::PARAM_STR);
 
-        self::updateImage();
-
-        return $stmt->execute();
+        if ($stmt->execute()) {
+            self::updateImage();
+        }
     }
 
     protected static function count($status)
