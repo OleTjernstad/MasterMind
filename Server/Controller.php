@@ -42,4 +42,8 @@ class Controller
         echo json_encode(['status' => 'success', 'message' =>'colors reset']);
         die();
     }
+
+    public function test()
+    {
+    }
 }

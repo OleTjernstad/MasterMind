@@ -40,4 +40,8 @@ if (isset($_GET['reset'])) {
     $app->reset();
 }
 
+if (isset($_GET['test'])) {
+    $app->test();
+}
+
 $app->App();
