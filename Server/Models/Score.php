@@ -15,7 +15,7 @@ class Score
         return $stmt->execute();
     }
 
-    protected function count()
+    protected static function count()
     {
         $sql = 'SELECT COUNT(status)
                 FROM stilling
@@ -29,7 +29,7 @@ class Score
         return $stmt->execute();
     }
 
-    public function updateImage()
+    public static function updateImage()
     {
         // FETCH IMAGE & WRITE TEXT
         $img = imagecreatefromjpeg('badge.jpg');
