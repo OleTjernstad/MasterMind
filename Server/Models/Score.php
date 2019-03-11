@@ -2,8 +2,17 @@
 
 class Score
 {
-    public function register()
+    public static function register($status)
     {
+        $sql = 'INSERT INTO stilling (status)
+                        VALUES (:status)';
+
+        $db = self::getDB();
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindValue(':status', $status, PDO::PARAM_STR);
+
+        $result = $stmt->execute();
     }
 
     public function updateImage()
@@ -24,5 +33,25 @@ class Score
         // OR SAVE TO A FILE
         // THE LAST PARAMETER IS THE QUALITY FROM 0 to 100
         imagejpeg($img, "mastermind.jpg", 100);
+    }
+
+    /**
+     * Get the PDO database connection
+     *
+     * @return mixed
+     */
+    protected static function getDB()
+    {
+        static $db = null;
+
+        if ($db === null) {
+            $dsn = 'mysql:host=' . 'localhost' . ';dbname=' . 'mastermind' . ';charset=utf8';
+            $db = new PDO($dsn, 'root', '');
+
+            // Throw an Exception when an error occurs
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+
+        return $db;
     }
 }
