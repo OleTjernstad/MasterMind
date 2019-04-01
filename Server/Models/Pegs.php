@@ -10,7 +10,7 @@ class Pegs
 
     private $numberCorrect = 0;
 
-    private $kordinater = 'N60 ***';
+    private $kordinater = 'N60° 18.429 E11° 41.657';
 
     public $lapNumber = 0;
 
